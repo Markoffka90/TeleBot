@@ -25,7 +25,7 @@ def convert(message: telebot.types.Message):
         values =  message.text.split(' ')
 
         if len(values) != 3:
-            raise ConvertionException('Необходимо ввести 3 параметра')
+            raise APIException('Необходимо ввести 3 параметра')
 
         quote, base, amount = values
         total_base = CurrencyConverter.get_price(quote, base, amount)
